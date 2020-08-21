@@ -4,7 +4,7 @@ reference_build: &reference_build
   os: linux
   env: *reference_jdk
 
-language: minimal
+language: scala
 
 os:
   - osx
