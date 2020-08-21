@@ -7,9 +7,9 @@ reference_build: &reference_build
 language: minimal
 
 os:
-    - osx
-    - windows
-    - *reference_os
+  - osx
+  - windows
+  - *reference_os
     
 env:
   matrix:
@@ -27,20 +27,21 @@ stages:
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
   - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+
 cache:
   directories:
     - $HOME/.gradle/caches/
     - $HOME/.gradle/wrapper/
   
- jobs:
-    exclude:
-        - <<: *reference_build
-          stage: test
-    include:
-        - <<: *reference_build
-          stage: base
-          script:
-            - travis_retry ./gradlew clean check
+jobs:
+  exclude:
+    - <<: *reference_build
+      stage: test
+  include:
+    - <<: *reference_build
+      stage: base
+      script:
+        - travis_retry ./gradlew clean check
             
 
 script:
