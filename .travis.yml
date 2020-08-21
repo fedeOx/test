@@ -6,6 +6,9 @@ reference_build: &reference_build
 
 language: scala
 
+before_install:
+ - chmod +x gradlew
+
 os:
   - osx
   - windows
