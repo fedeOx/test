@@ -7,9 +7,6 @@ reference_build: &reference_build
 
 language: minimal
 
-before_install:
- - chmod +x gradlew
-
 os:
   - osx
   - windows
