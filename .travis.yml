@@ -30,6 +30,7 @@ env:
     - JDK="adopt-openj9@"
 
 before_install:
+    - chmod +x gradlew
     # Check out the script set
     - travis_retry git clone --depth 1 $GRAVIS_REPO $GRAVIS
     # Install the JDK you configured in the $JDK environment variable
